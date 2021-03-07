@@ -1,19 +1,35 @@
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Header from "./Header"
 
 function App() {
   return (
-    <div className="App">
-      <h1>Let's build an AMAZON Clone with React JS</h1>
-      <h2>Hello world</h2>
-
-      {/* We Need React-ROUTER */}
-
-      {/* localhost.com/  */}
-      {/* localhost.com/checkout */}
-      {/* localhost.com/login */}
-
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path='/checkout'>
+            <h1>Checkout</h1>
+          </Route>
+          <Route path='/login'>
+            <h1>Login page</h1>
+          </Route>
+          { /* this is the default route */ }
+          <Route path="/">
+            <Header />
+            <h1>HOME PAGE!!!</h1>
+          </Route>
+        </Switch>
       </div>
+    </Router>
   );
 }
+
+
+{/* We Need React-ROUTER */}
+
+{/* localhost.com/  */}
+{/* localhost.com/checkout */}
+{/* localhost.com/login */}
+
 
 export default App;
